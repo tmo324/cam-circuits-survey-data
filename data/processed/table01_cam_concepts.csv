@@ -1,0 +1,4 @@
+input,storage,output,circuit,citation_key
+Digital,Digital,Digital,B/T CAM,SRAM_5
+Analog,Analog,Digital,Analog CAM,ReRAM_5
+Analog,Analog,Analog,Differentiable CAM,types_dcam

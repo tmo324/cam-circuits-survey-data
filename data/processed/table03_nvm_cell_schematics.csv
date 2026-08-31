@@ -1,0 +1,7 @@
+storage_type,technology,cell_configuration,citation_key,asset
+Ternary,ReRAM,2T2M,ReRAM_7,tables/assets/table03_reram_ternary.png
+Ternary,MTJ,4T2MTJ,MTJ_2,tables/assets/table03_mtj_ternary.png
+Ternary,FeFET,4T2FeFET,FeFET_1,tables/assets/table03_fefet_ternary.png
+Analog,ReRAM,6T2M,ReRAM_5,tables/assets/table03_reram_analog.png
+Analog,FeFET,2FeFET,FeFET_3,tables/assets/table03_fefet_analog.png
+Differentiable,ReRAM,6T2M,types_dcam,tables/assets/table03_reram_differentiable.png

@@ -1,0 +1,8 @@
+feature,sram_cam,dram_cam,nvm_cam
+Speed,High,Moderate,High (MRAM)
+Density,Low,High,Very High
+Power Efficiency,Low,Moderate,High
+Non-volatility,No,No,Yes
+Cost,High,Low,"High (MRAM), Low (ReRAM)"
+Endurance,High,Moderate,"High (MRAM), Limited (ReRAM)"
+Applications,"Networking, caches","Databases, ML","AI, Genomics, IoT"

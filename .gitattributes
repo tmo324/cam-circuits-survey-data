@@ -1,0 +1,3 @@
+# Preserve source-export formatting without treating embedded whitespace as errors.
+data/raw/cam_survey_main_export.csv -whitespace
+references.bib -whitespace

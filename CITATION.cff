@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this dataset or its figure sources, please cite the associated paper."
+title: "CAM Circuits Survey Data and Figure Sources"
+type: dataset
+version: 1.0.0
+license: CC-BY-4.0
+authors:
+  - family-names: Molom-Ochir
+    given-names: Tergel
+  - family-names: Taylor
+    given-names: Brady
+  - family-names: Li
+    given-names: Hai
+  - family-names: Chen
+    given-names: Yiran
+preferred-citation:
+  type: article
+  title: "Advancements in Content-Addressable Memory (CAM) Circuits: State-of-the-Art, Applications, and Future Directions in the AI Domain"
+  authors:
+    - family-names: Molom-Ochir
+      given-names: Tergel
+    - family-names: Taylor
+      given-names: Brady
+    - family-names: Li
+      given-names: Hai
+    - family-names: Chen
+      given-names: Yiran
+  journal: "IEEE Transactions on Circuits and Systems I: Regular Papers"
+  volume: 72
+  issue: 8
+  start: 3971
+  end: 3982
+  year: 2025
+  doi: 10.1109/TCSI.2025.3527309

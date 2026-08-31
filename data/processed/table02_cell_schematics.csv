@@ -1,0 +1,5 @@
+storage_type,technology,cell_configuration,citation_key,asset
+Binary,SRAM,10T,SRAM_5,tables/assets/table02_sram_binary.png
+Binary,DRAM,3T1C,DRAM_22,tables/assets/table02_dram_binary.png
+Ternary,SRAM,16T,SRAM_5,tables/assets/table02_sram_ternary.png
+Ternary,DRAM,6T2C,DRAM_20,tables/assets/table02_dram_ternary.png

@@ -1,0 +1,13 @@
+manuscript_reference_number,year,application,citation_key,improvement
+73,2014,IP Lookup,app_2014,"2x smaller index TCAM, O(logM) search"
+74,2015,Forwarding Engine,app_2015,"1.67x energy, 1.43x cost efficiency, 3 memory accesses per lookup"
+75,2016,Approximate Computing,app_2016,"1.35x energy, 2.9x vs offline profiling"
+76,2017,NN Computation Optimization,app_2017,"1.68x energy, 1.4x speed"
+77,2018,Binarized NN,app_2018,"1.385x energy, 1.094x area, 2.4x speed"
+72,2019,Memory Augmented NN,FeFET_4,"60x energy, 2,700x latency"
+78,2020,Finite State Machines,app_2020,25x throughput/watt
+79,2021,Boolean Satisfiability Acceleration,app_2021_SAT,"62-185x speed, supports 32M clauses"
+24,2021,Tree-Based ML Model,app_AI_3,"1,000x throughput, 12x energy"
+6,2022,DNA Classification,app_gen_2,"2.2x sensitivity, 1,200x throughput"
+25,2023,Transformer Acceleration,app_AI_4,"10.7x speed, 1,193x energy"
+80,2024,Deep Random Forest,app_2024,"106x energy (vs CPU), 10x (vs ReRAM)"
