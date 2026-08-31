@@ -1,117 +1,188 @@
-# CAM Circuits Survey Data and Figure Sources
+<h1 align="center">CAM Circuits Survey</h1>
 
-This repository contains the survey data, plotting scripts, editable diagram
-sources, and table sources associated with:
+<p align="center">
+  <strong>Open data and reproducible figures for content-addressable memory circuits</strong>
+</p>
+
+<p align="center">
+  <a href="#paper">Paper</a> ·
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="REPRODUCIBILITY.md">Reproduce Artifacts</a> ·
+  <a href="#citation">Citation</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/tmo324/cam-circuits-survey-data/actions/workflows/ci.yml">
+    <img src="https://github.com/tmo324/cam-circuits-survey-data/actions/workflows/ci.yml/badge.svg" alt="CI">
+  </a>
+  <a href="https://github.com/tmo324/cam-circuits-survey-data/actions/workflows/secret-scan.yml">
+    <img src="https://github.com/tmo324/cam-circuits-survey-data/actions/workflows/secret-scan.yml/badge.svg" alt="Secret scan">
+  </a>
+  <img src="https://img.shields.io/badge/python-3.10--3.12-3776AB?logo=python&logoColor=white" alt="Python 3.10 through 3.12">
+  <a href="CITATION.cff">
+    <img src="https://img.shields.io/badge/citation-CFF-4B8BBE" alt="Citation CFF">
+  </a>
+  <a href="https://doi.org/10.1109/TCSI.2025.3527309">
+    <img src="https://img.shields.io/badge/DOI-10.1109%2FTCSI.2025.3527309-blue" alt="Paper DOI">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/code-MIT-lightgrey" alt="MIT code license">
+  </a>
+  <a href="LICENSE-DATA.md">
+    <img src="https://img.shields.io/badge/data-CC%20BY%204.0-green" alt="CC BY 4.0 data license">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/CAM-circuits-002D72" alt="CAM circuits">
+  <img src="https://img.shields.io/badge/survey-open_data-7B61FF" alt="Open survey data">
+  <img src="https://img.shields.io/badge/figures-reproducible-00897B" alt="Reproducible figures">
+  <img src="https://img.shields.io/badge/sources-Draw.io-E67E22" alt="Draw.io sources">
+</p>
+
+<p align="center">
+  <strong>41 plotted CAM designs · 13 exact published figure panels · 9 editable Draw.io sources · 6 generated tables</strong>
+</p>
+
+---
+
+This repository is the public artifact package for a survey of content-addressable
+memory circuits. It combines the canonical survey workbook, cleaned plot-ready
+data, exact figure exports from the published manuscript, editable diagram
+sources, Python regeneration scripts, and LaTeX table generators.
+
+> **Project status:** archival research artifact, version 1.0. The
+> `figures/published/` directory is the authoritative record of the paper-facing
+> images. The `figures/generated/` directory contains reproducible outputs.
+
+## Paper
+
+This repository accompanies:
 
 T. Molom-Ochir, B. Taylor, H. Li, and Y. Chen, "Advancements in
 Content-Addressable Memory (CAM) Circuits: State-of-the-Art, Applications, and
-Future Directions in the AI Domain," IEEE Transactions on Circuits and Systems
-I: Regular Papers, vol. 72, no. 8, pp. 3971-3982, 2025.
-[https://doi.org/10.1109/TCSI.2025.3527309](https://doi.org/10.1109/TCSI.2025.3527309)
+Future Directions in the AI Domain," *IEEE Transactions on Circuits and Systems
+I: Regular Papers*, vol. 72, no. 8, pp. 3971-3982, 2025.
 
-## What is included
+- [IEEE Xplore](https://ieeexplore.ieee.org/document/10843122)
+- [DOI: 10.1109/TCSI.2025.3527309](https://doi.org/10.1109/TCSI.2025.3527309)
 
-- The canonical survey workbook and its main-sheet CSV export.
-- A cleaned 41-record design dataset with documented derived metrics.
-- Four Python scripts converted from the four exploratory notebooks.
-- Byte-preserved Draw.io sources, renamed consistently.
-- Exact author exports for every published figure panel.
-- Data-generated versions of Figs. 4, 6, and 7.
-- CSV sources and generated LaTeX for Tables I through VI.
-- The BibTeX library used by the manuscript.
+The article PDF is not redistributed in this repository.
 
-The article PDF is intentionally not redistributed here.
+## Research Artifact Highlights
 
-## Reproduce the artifacts
+- **Exact paper assets:** all 13 panels used across Figs. 1-8 are retained as
+  byte-preserved author exports.
+- **Data-driven regeneration:** Figs. 4, 6, and 7 are rebuilt from the released
+  41-record CAM design dataset.
+- **Editable sources:** nine original Draw.io files are retained without
+  modifying their hand-drawn contents.
+- **Complete table coverage:** CSV inputs and generated LaTeX are provided for
+  Tables I-VI, including ten circuit-schematic panels.
+- **Traceable provenance:** the raw workbook, its main-sheet CSV export,
+  processed data, formulas, and paper-to-repository mapping are documented.
 
-Python 3.10 or later is recommended.
+## Quick Start
 
-~~~bash
+Python 3.10, 3.11, and 3.12 are supported.
+
+```sh
+git clone https://github.com/tmo324/cam-circuits-survey-data.git
+cd cam-circuits-survey-data
+
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
-python analysis/generate_all.py
-~~~
+python -m pip install --upgrade pip
+make install-test
+```
 
-The last command prepares the data, materializes manual diagram exports,
-regenerates all data plots and LaTeX tables, and validates the complete
-artifact inventory.
+Validate the committed release artifacts:
 
-Equivalent Make targets are available:
-
-~~~bash
-make all
-make figures
-make tables
+```sh
 make check
-~~~
+```
 
-## Repository layout
+Regenerate the processed dataset, all figure outputs, and all six LaTeX table
+fragments:
 
-~~~text
-.
-├── analysis/             # Clean Python scripts and validation
-├── data/
-│   ├── raw/              # Original canonical workbooks and sheet export
-│   └── processed/        # Plot-ready and table-ready CSV files
-├── docs/                 # Artifact map and source-selection notes
-├── figures/
-│   ├── source/           # Editable, byte-preserved Draw.io files
-│   ├── published/        # Exact author exports used by the manuscript
-│   └── generated/        # Outputs materialized by generate_all.py
-├── tables/
-│   ├── assets/           # Circuit schematic panels
-│   └── generated/        # Rebuilt LaTeX table fragments
-└── references.bib
-~~~
+```sh
+make paper
+```
 
-## Notebook-to-script mapping
+See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the figure-by-figure and
+table-by-table reproduction matrix.
 
-| Original notebook | Clean script | Main output |
+## Artifact Model
+
+| Path | Role |
+|---|---|
+| [`data/raw/`](data/raw/) | Canonical survey workbooks and main-sheet CSV export |
+| [`data/processed/`](data/processed/) | Plot-ready and table-ready CSV data |
+| [`analysis/`](analysis/) | Notebook-derived Python scripts and validation |
+| [`figures/source/`](figures/source/) | Editable, byte-preserved Draw.io files |
+| [`figures/published/`](figures/published/) | Exact author exports used by the manuscript |
+| [`figures/generated/`](figures/generated/) | Outputs materialized by `make paper` |
+| [`tables/assets/`](tables/assets/) | Circuit schematic panels used by Tables II and III |
+| [`tables/generated/`](tables/generated/) | Generated LaTeX for Tables I-VI |
+| [`docs/artifact_manifest.md`](docs/artifact_manifest.md) | Paper-to-repository artifact mapping |
+| [`data/CODEBOOK.md`](data/CODEBOOK.md) | Column definitions, units, and derived formulas |
+
+## Reproducibility Boundary
+
+There are two distinct reproduction goals:
+
+1. **Exact paper reproduction:** use the files under `figures/published/`.
+   These are the original raster exports used by the manuscript.
+2. **Computational regeneration:** run `make paper`. Data plots are rendered
+   again from released data, while hand-drawn panels and Fig. 8 are materialized
+   from the verified author exports.
+
+Fresh Matplotlib or Draw.io exports can differ at the pixel or byte level across
+font, library, operating-system, and export-tool versions. The underlying data,
+labels, and artifact coverage are validated independently of those renderer
+differences.
+
+## Notebook-to-Script Map
+
+| Original notebook | Maintained script | Main output |
 |---|---|---|
-| CAM Circuits Survey PLayground.ipynb | analysis/explore_cam_designs.py | Dataset summaries |
-| CAM Circuits Survey v2.0.ipynb | analysis/plot_cell_area.py | Figs. 4 and 6 |
-| CAM Circuits Survey v2.0 information density.ipynb | analysis/plot_information_density.py | Fig. 7(a) |
-| CAM Circuits Survey v3.0_ Energy Area.ipynb | analysis/plot_search_energy.py | Fig. 7(b) |
+| `CAM Circuits Survey PLayground.ipynb` | `analysis/explore_cam_designs.py` | Dataset summaries |
+| `CAM Circuits Survey v2.0.ipynb` | `analysis/plot_cell_area.py` | Figs. 4 and 6 |
+| `CAM Circuits Survey v2.0 information density.ipynb` | `analysis/plot_information_density.py` | Fig. 7(a) |
+| `CAM Circuits Survey v3.0_ Energy Area.ipynb` | `analysis/plot_search_energy.py` | Fig. 7(b) |
 
-The scripts remove notebook-only package installation, repeated imports,
-display-only cells, and abandoned experiments. The numerical definitions and
-paper-facing plots are retained.
-
-## Important provenance notes
-
-The master workbook contains both "latex numbering" and "proof numbering".
-Figures 6 and 7 were exported before the bibliography was reordered during
-proofing, so the labels visible in the published raster figures correspond to
-manuscript_reference_number. The plotting scripts use that numbering by
-default. Pass --numbering proof to the individual scripts to use final proof
-numbers instead.
-
-The cleaned design dataset has 41 plotted records. Table V has 37 displayed
-rows because the plot dataset also retains two SRAM scaling points attached to
-one cited design and three MTJ layout variants represented by a single Table V
-row.
-
-Figure 8 is retained as the exact author export, and its 12 application entries
-are available in data/processed/cam_applications.csv. No editable timeline
-source was present in the supplied archive, so generate_all.py materializes
-that verified export rather than redrawing it.
-
-See [the artifact manifest](docs/artifact_manifest.md) for the complete
-paper-to-repository mapping and [the data codebook](data/CODEBOOK.md) for units
-and formulas.
-
-## Licensing
-
-Code is released under the MIT License. Data, editable Draw.io sources, and
-author-created figure assets are released under CC BY 4.0, as described in
-LICENSE-DATA.md.
-
-Before making a public release, repository owners should confirm that all
-coauthors approve the selected license and that no third-party figure content
-requires separate permission.
+The scripts retain the paper-facing numerical definitions while removing
+notebook-only installation cells, repeated imports, abandoned experiments, and
+legacy missing-file paths.
 
 ## Citation
 
-Citation metadata is provided in CITATION.cff. GitHub can use this file to
-display a ready-to-copy paper citation.
+Machine-readable citation metadata is provided in [`CITATION.cff`](CITATION.cff).
+
+```bibtex
+@article{molomochir2025cam,
+  author  = {Molom-Ochir, Tergel and Taylor, Brady and Li, Hai and Chen, Yiran},
+  title   = {Advancements in Content-Addressable Memory (CAM) Circuits:
+             State-of-the-Art, Applications, and Future Directions in the AI Domain},
+  journal = {IEEE Transactions on Circuits and Systems I: Regular Papers},
+  volume  = {72},
+  number  = {8},
+  pages   = {3971--3982},
+  year    = {2025},
+  doi     = {10.1109/TCSI.2025.3527309}
+}
+```
+
+## Governance and Community
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
+- [Third-Party Notices](THIRD_PARTY_NOTICES.md)
+
+## License
+
+Original code is released under the [MIT License](LICENSE). Data, editable
+Draw.io sources, and author-created figure assets are released under
+[CC BY 4.0](LICENSE-DATA.md). Bibliographic records and cited third-party works
+retain their original rights.

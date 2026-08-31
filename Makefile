@@ -1,8 +1,28 @@
-.PHONY: all data figures tables check clean
+.PHONY: install install-test test check all paper data figures tables clean
 
 PYTHON ?= python3
+MPLCONFIGDIR ?= $(CURDIR)/.matplotlib
+MPLBACKEND ?= Agg
 
-all:
+export MPLCONFIGDIR MPLBACKEND
+
+install:
+	$(PYTHON) -m pip install -e .
+
+install-test:
+	$(PYTHON) -m pip install -e ".[test]"
+
+test:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -v
+
+check:
+	$(PYTHON) -m compileall -q analysis tests
+	$(MAKE) PYTHON=$(PYTHON) test
+	$(PYTHON) analysis/validate_artifacts.py
+
+all: paper
+
+paper:
 	$(PYTHON) analysis/generate_all.py
 
 data:
@@ -16,9 +36,6 @@ figures: data
 
 tables:
 	$(PYTHON) analysis/generate_tables.py
-
-check:
-	$(PYTHON) analysis/validate_artifacts.py
 
 clean:
 	$(PYTHON) analysis/clean_generated.py

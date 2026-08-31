@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cam-circuits-survey-data"
+version = "1.0.0"
+description = "Open data and reproducible figures for a survey of content-addressable memory circuits"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Tergel Molom-Ochir" },
+    { name = "Brady Taylor" },
+    { name = "Hai Li" },
+    { name = "Yiran Chen" },
+]
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+]
+dependencies = [
+    "matplotlib>=3.8,<4",
+    "numpy>=1.26,<3",
+    "openpyxl>=3.1,<4",
+    "pandas>=2.1,<4",
+]
+
+[project.optional-dependencies]
+test = []
+
+[project.urls]
+Repository = "https://github.com/tmo324/cam-circuits-survey-data"
+Issues = "https://github.com/tmo324/cam-circuits-survey-data/issues"
+Paper = "https://doi.org/10.1109/TCSI.2025.3527309"
+
+[tool.setuptools]
+py-modules = []

@@ -4,6 +4,9 @@ title: "CAM Circuits Survey Data and Figure Sources"
 type: dataset
 version: 1.0.0
 license: CC-BY-4.0
+date-released: 2026-08-31
+repository-code: "https://github.com/tmo324/cam-circuits-survey-data"
+url: "https://github.com/tmo324/cam-circuits-survey-data"
 authors:
   - family-names: Molom-Ochir
     given-names: Tergel

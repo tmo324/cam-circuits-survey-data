@@ -3,6 +3,19 @@
 Contributions that correct metadata, add missing CAM designs, or improve
 reproducibility are welcome.
 
+By participating, you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+Report vulnerabilities through the private process in [SECURITY.md](SECURITY.md),
+not through a public issue.
+
+## Development setup
+
+~~~bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+make install-test
+~~~
+
 ## Data changes
 
 1. Preserve data/raw/cam_survey_master.xlsx as the canonical source.
@@ -34,9 +47,18 @@ schematic panels under tables/assets.
 Before submitting a change, run:
 
 ~~~bash
-python -m py_compile analysis/*.py
-python analysis/generate_all.py
+make check
+make paper
 ~~~
 
-The validation step checks expected files, Draw.io XML validity, dataset row
-counts, and a known normalization value.
+The checks cover Python compilation, public-release scaffolding, expected files,
+Draw.io XML validity, dataset row counts, citation keys, and a known
+normalization value. Inspect changed figures before submitting a pull request.
+
+## Pull requests
+
+- Keep each pull request focused on one data correction, reproducibility
+  improvement, or documentation change.
+- Explain the source of every numerical or bibliographic correction.
+- Include regenerated outputs when their source data or scripts change.
+- Confirm that new material is compatible with the repository licenses.
