@@ -20,7 +20,7 @@ function renderComparison(){
  document.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>togglePin(Number(b.dataset.remove)));
  document.querySelectorAll('[data-inspect]').forEach(b=>b.onclick=()=>selectDesign(Number(b.dataset.inspect)));
 }
-function viewHash(){const p=new URLSearchParams({v:'1',fig:state.figure,tech:[...state.tech].join(','),mode:state.mode,node:state.node,from:state.from,to:state.to,labels:state.labels?'1':'0',scale:state.scale,energy:state.energy,x:state.x,y:state.y,xscale:state.xscale,pins:state.pins.join(',')});if(state.selected!==null)p.set('selected',state.selected);p.set('q',state.query);p.set('limits',JSON.stringify(state.limits));return '#'+p.toString();}
+function viewHash(){const p=new URLSearchParams({v:'1',fig:state.figure,tech:[...state.tech].join(','),mode:state.mode,node:state.node,from:state.from,to:state.to,labels:state.labels?'1':'0',scale:state.scale,energy:state.energy,x:state.x,y:state.y,xscale:state.xscale,pins:state.pins.join(',')});if(state.selected!==null)p.set('selected',state.selected);p.set('trends',state.trends?'1':'0');p.set('q',state.query);p.set('limits',JSON.stringify(state.limits));return '#'+p.toString();}
 function restoreView(){
  const p=new URLSearchParams(location.hash.slice(1));if(p.get('v')!=='1')return;
  if(Object.hasOwn(figures,p.get('fig')))state.figure=p.get('fig');state.scale=figures[state.figure].scale;
@@ -30,7 +30,7 @@ function restoreView(){
  for(const k of ['from','to'])if(data.some(d=>String(d.year)===p.get(k)))state[k]=Number(p.get(k));
  if(state.from>state.to)[state.from,state.to]=[state.to,state.from];
  restoreDiscovery(p);
- state.labels=p.get('labels')==='1';if(['log','linear'].includes(p.get('scale'))||(state.figure==='6b'&&p.get('scale')==='paper'))state.scale=p.get('scale');
+ state.trends=p.get('trends')==='1';state.labels=p.get('labels')==='1';if(['log','linear'].includes(p.get('scale'))||(state.figure==='6b'&&p.get('scale')==='paper'))state.scale=p.get('scale');
  if(['raw','normalized'].includes(p.get('energy')))state.energy=p.get('energy');
  for(const k of ['x','y'])if(Object.hasOwn(metricLabels,p.get(k)))state[k]=p.get(k);
  if(['linear','log'].includes(p.get('xscale')))state.xscale=p.get('xscale');

@@ -19,6 +19,7 @@ function addFrontierTrace(traces){
  traces.push({type:'scatter',mode:'lines+markers',name:'Pareto frontier',x:front.map(d=>d[f.x]),y:front.map(d=>d[f.y]),customdata:front.map(d=>d.source_row),line:{color:'#012169',width:2,dash:'dot'},marker:{symbol:'circle-open',size:21,color:'#012169',line:{width:2}},hovertext:front.map(d=>`<b>Frontier · [${d.manuscript_reference_number}] ${esc(d.cell_structure)}</b><br>Density: ${fmt(d[f.x])} bits/µm²<br>${f.ylabel}: ${fmt(d[f.y])}<br>Click to inspect`),hovertemplate:'%{hovertext}<extra></extra>',showlegend:false});
 }
 function renderDiscovery(){
+ renderTrendControls();
  if(document.activeElement!==$('design-search'))$('design-search').value=state.query;
  for(const key of Object.keys(constraintMetrics))for(const bound of ['min','max']){const input=$('limit-'+key+'-'+bound);if(document.activeElement!==input&&input.dataset.dirty!=='true')input.value=state.limits[key]?.[bound]??'';}
  $('pareto-summary').hidden=state.figure!=='pareto';if(state.figure!=='pareto')return;
@@ -33,6 +34,7 @@ function restoreDiscovery(p){
  clearConstraintDraft();
 }
 function wireDiscovery(){
+ $('trends').onchange=()=>{state.trends=$('trends').checked;render();};
  const updateSearch=()=>{state.query=$('design-search').value;render();};$('design-search').oninput=updateSearch;$('design-search').onchange=updateSearch;$('design-search').onsearch=updateSearch;
  document.querySelectorAll('[data-bound]').forEach(input=>input.oninput=()=>input.dataset.dirty='true');
  $('constraints').onsubmit=event=>{event.preventDefault();const limits={};for(const [key,label] of Object.entries(constraintMetrics)){const bounds={};for(const b of ['min','max']){const input=$('limit-'+key+'-'+b);if(input.value!=='')bounds[b]=Number(input.value);}if(bounds.min!==undefined&&bounds.max!==undefined&&bounds.min>bounds.max){$('constraint-error').textContent=label+': minimum must not exceed maximum. Previous limits remain active.';return;}if(Object.keys(bounds).length)limits[key]=bounds;}state.limits=limits;document.querySelectorAll('[data-bound]').forEach(input=>input.dataset.dirty='false');$('constraint-error').textContent='';render();tell('Numeric limits applied.');};
@@ -42,4 +44,25 @@ function wireDiscovery(){
 async function loadDiscovery(){
  const response=await fetch('p00_data/authors.json');if(!response.ok)throw Error('Author index unavailable');authorNames=await response.json();
  $('constraint-fields').innerHTML=Object.entries(constraintMetrics).map(([key,label])=>`<fieldset><legend>${label}</legend><div class="bounds"><label>Minimum<input id="limit-${key}-min" data-bound="min" type="number" min="0" step="any" placeholder="No min" aria-label="Minimum ${label}"></label><label>Maximum<input id="limit-${key}-max" data-bound="max" type="number" min="0" step="any" placeholder="No max" aria-label="Maximum ${label}"></label></div></fieldset>`).join('');
+}
+
+function recordTrend(rows,key,maximize=false){
+ const yearly=new Map();
+ for(const d of rows){if(!Number.isFinite(d.year)||!Number.isFinite(d[key]))continue;const old=yearly.get(d.year);if(old===undefined||(maximize?d[key]>old:d[key]<old))yearly.set(d.year,d[key]);}
+ let best=maximize?-Infinity:Infinity;
+ return [...yearly].sort((a,b)=>a[0]-b[0]).map(([year,value])=>{best=maximize?Math.max(best,value):Math.min(best,value);return {year,value:best};});
+}
+function trendAvailable(){return ['6b','7b'].includes(state.figure);}
+function renderTrendControls(){
+ $('trends').disabled=!trendAvailable();$('trends').checked=state.trends&&trendAvailable();
+ $('trend-help').textContent=!trendAvailable()?'Available on Area over time and Search energy.':!state.trends?'Optional dashed step lines, one per technology.':'Dashed steps track the lowest value reported so far within each filtered technology, using the selected energy metric. At least two publication years are needed. Lines stop at the last observation. Different nodes and operating conditions may be pooled; these are dataset records, not forecasts or fitted regressions.';
+}
+function addTrendTraces(traces){
+ if(!state.trends||!trendAvailable())return;
+ const f=currentFigure();
+ for(const [tech,color] of Object.entries(colors)){
+  const points=recordTrend(visible.filter(d=>d.technology===tech),f.y);if(points.length<2)continue;
+  const trace={type:'scatter',mode:'lines',name:tech+' best reported so far',x:points.map(p=>p.year),y:points.map(p=>p.value),line:{color,width:2,dash:'dash',shape:'hv'},hovertemplate:esc(tech)+' best so far<br>Through %{x}: %{y:.4g}<extra></extra>',showlegend:false};
+  traces.push(trace);if(state.figure==='6b'&&state.scale==='paper')traces.push({...trace,yaxis:'y2'});
+ }
 }
