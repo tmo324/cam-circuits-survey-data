@@ -1,0 +1,77 @@
+name: Suggest a CAM design
+description: Propose a source-backed addition to the CAM survey dataset.
+title: "[Design suggestion] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping extend the CAM survey. Suggestions are reviewed before inclusion. The published 41-design snapshot is preserved. Use "not reported" for unavailable values; do not infer missing measurements.
+  - type: input
+    id: paper
+    attributes:
+      label: Paper title
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: DOI or authoritative paper URL
+      description: Link to the source paper, publisher page, or preprint.
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: Publication year and venue
+    validations:
+      required: true
+  - type: dropdown
+    id: technology
+    attributes:
+      label: Technology
+      options:
+        - SRAM
+        - DRAM
+        - ReRAM
+        - MTJ
+        - FeFET
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: cell
+    attributes:
+      label: Cell and storage mode
+      description: Give the cell configuration, CAM concept (binary, ternary, analog, differentiable), representable states, and any other technology details.
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Reported metrics and units
+      description: Process node (nm), cell area (µm²), and search energy (fJ/bit/search). Distinguish cell area from macro area. Include original values and explain any unit conversion.
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: Evaluation conditions
+      description: Supply voltage, full array dimensions, match-line width, frequency or latency, and whether results are measured, simulated, or estimated. Write "not reported" where needed.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Exact source locations
+      description: Identify the page, figure, table, or section supporting each metric and condition. Explain any comparison limitations.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Submission checks
+      options:
+        - label: I have distinguished reported values from derived or inferred values.
+          required: true
+        - label: I understand that submitting a suggestion does not change the published dataset automatically.
+          required: true
