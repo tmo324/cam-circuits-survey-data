@@ -5,6 +5,7 @@
   "note": "CSV values preserved; JSON numbers converted; DOI links extracted from repository bibliography.",
   "studio_supplements": {
     "conditions": "Raw workbook CSV columns: Vdd (V), match line size in bits; joined by one-based source_row including header. No inference. Array size and evaluation method not extracted.",
-    "schematics": "Ten original Table II/III assets. Spotlight matching requires citation_key, technology, and cell configuration. Gallery preserves table metadata."
+    "schematics": "Ten original Table II/III assets. Spotlight matching requires citation_key, technology, and cell configuration. Gallery preserves table metadata.",
+    "authors": "Author strings extracted from the released references.bib by citation key; no external enrichment."
   }
 }
