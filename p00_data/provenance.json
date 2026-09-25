@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/tmo324/cam-circuits-survey-data",
+  "commit": "90ebde2d488055d6142c93556d618eb8eb6fc609",
+  "records": 41,
+  "note": "CSV values preserved; JSON numbers converted; DOI links extracted from repository bibliography."
+}
