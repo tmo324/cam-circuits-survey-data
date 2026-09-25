@@ -1,0 +1,248 @@
+{
+  "4": {
+    "supply_voltage_v": "1",
+    "match_line_bits": "20",
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "22": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "2": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "12": {
+    "supply_voltage_v": "1.2",
+    "match_line_bits": "144",
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "13": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "21": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "3": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "33": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "34": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "15": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "10": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "14": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "37": {
+    "supply_voltage_v": "1.8",
+    "match_line_bits": "144",
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "8": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "35": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "38": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "19": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "9": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "32": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "36": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "5": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "7": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "25": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "27": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "24": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "6": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "39": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "40": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "41": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "26": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "43": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "31": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "29": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "42": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "45": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "44": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "28": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "23": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "30": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "16": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  },
+  "11": {
+    "supply_voltage_v": null,
+    "match_line_bits": null,
+    "array_size": null,
+    "evaluation_method": null
+  }
+}

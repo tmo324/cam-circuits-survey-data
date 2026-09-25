@@ -2,5 +2,9 @@
   "repository": "https://github.com/tmo324/cam-circuits-survey-data",
   "commit": "90ebde2d488055d6142c93556d618eb8eb6fc609",
   "records": 41,
-  "note": "CSV values preserved; JSON numbers converted; DOI links extracted from repository bibliography."
+  "note": "CSV values preserved; JSON numbers converted; DOI links extracted from repository bibliography.",
+  "studio_supplements": {
+    "conditions": "Raw workbook CSV columns: Vdd (V), match line size in bits; joined by one-based source_row including header. No inference. Array size and evaluation method not extracted.",
+    "schematics": "Ten original Table II/III assets. Spotlight matching requires citation_key, technology, and cell configuration. Gallery preserves table metadata."
+  }
 }

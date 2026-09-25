@@ -1,0 +1,72 @@
+[
+  {
+    "storage_type": "Binary",
+    "technology": "SRAM",
+    "cell_configuration": "10T",
+    "citation_key": "SRAM_5",
+    "asset": "p03_schematics/table02_sram_binary.png"
+  },
+  {
+    "storage_type": "Binary",
+    "technology": "DRAM",
+    "cell_configuration": "3T1C",
+    "citation_key": "DRAM_22",
+    "asset": "p03_schematics/table02_dram_binary.png"
+  },
+  {
+    "storage_type": "Ternary",
+    "technology": "SRAM",
+    "cell_configuration": "16T",
+    "citation_key": "SRAM_5",
+    "asset": "p03_schematics/table02_sram_ternary.png"
+  },
+  {
+    "storage_type": "Ternary",
+    "technology": "DRAM",
+    "cell_configuration": "6T2C",
+    "citation_key": "DRAM_20",
+    "asset": "p03_schematics/table02_dram_ternary.png"
+  },
+  {
+    "storage_type": "Ternary",
+    "technology": "ReRAM",
+    "cell_configuration": "2T2M",
+    "citation_key": "ReRAM_7",
+    "asset": "p03_schematics/table03_reram_ternary.png"
+  },
+  {
+    "storage_type": "Ternary",
+    "technology": "MTJ",
+    "cell_configuration": "4T2MTJ",
+    "citation_key": "MTJ_2",
+    "asset": "p03_schematics/table03_mtj_ternary.png"
+  },
+  {
+    "storage_type": "Ternary",
+    "technology": "FeFET",
+    "cell_configuration": "4T2FeFET",
+    "citation_key": "FeFET_1",
+    "asset": "p03_schematics/table03_fefet_ternary.png"
+  },
+  {
+    "storage_type": "Analog",
+    "technology": "ReRAM",
+    "cell_configuration": "6T2M",
+    "citation_key": "ReRAM_5",
+    "asset": "p03_schematics/table03_reram_analog.png"
+  },
+  {
+    "storage_type": "Analog",
+    "technology": "FeFET",
+    "cell_configuration": "2FeFET",
+    "citation_key": "FeFET_3",
+    "asset": "p03_schematics/table03_fefet_analog.png"
+  },
+  {
+    "storage_type": "Differentiable",
+    "technology": "ReRAM",
+    "cell_configuration": "6T2M",
+    "citation_key": "types_dcam",
+    "asset": "p03_schematics/table03_reram_differentiable.png"
+  }
+]
